@@ -1,0 +1,31 @@
+# Git & version control
+.git
+.gitignore
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# IDE and editor settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build & output files
+build/
+dist/
+*.npy
+*.wav
+*.png
+*.jpg
+*.log
+audio/
+data/
+
+# Virtual environments & temp
+.env
+.venv/
+Pipfile.lock

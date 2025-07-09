@@ -1,0 +1,1 @@
+Add TYPE HINTING to all your files!!!
