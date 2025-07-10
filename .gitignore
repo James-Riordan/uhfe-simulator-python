@@ -32,3 +32,5 @@ dist/
 # Virtual environment
 .env
 .venv/
+
+output-pics/

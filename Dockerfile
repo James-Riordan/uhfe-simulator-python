@@ -1,8 +1,8 @@
-FROM python:3.13.5-slim
+FROM python:3.10.3-slim
 
-# Set environment variables for GUI backend
 ENV DEBIAN_FRONTEND=noninteractive
 ENV MPLBACKEND=TkAgg
+ENV DOCKER=true
 
 RUN apt-get update && apt-get install -y \
     python3-tk \
@@ -13,10 +13,19 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Copy Pipenv files and install dependencies
-COPY Pipfile Pipfile.lock* ./
-RUN pip install pipenv && pipenv install --system --deploy
+# Copy only Pipfile first to leverage Docker cache
+COPY Pipfile ./
 
+# Install pipenv
+RUN pip install pipenv
+
+# Generate Pipfile.lock *inside* the container
+RUN pipenv lock
+
+# Install dependencies from the lock file
+RUN pipenv install --system --deploy
+
+# Copy the rest of the code
 COPY . .
 
 CMD ["python", "main.py"]

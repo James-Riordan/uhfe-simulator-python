@@ -1,5 +1,5 @@
 import numpy as np
-from uhfe_simulator import parameters as p
+import parameters as p
 
 class PsiField:
     """
@@ -67,3 +67,9 @@ class PsiField:
                     lap[index] = 0
 
         return lap
+    
+    def initialize_gaussian_blob(self, amplitude=1.0, width=0.2):
+        coords = [np.linspace(-1, 1, s) for s in self.grid_shape]
+        grid = np.meshgrid(*coords, indexing='ij')
+        r_squared = sum((g**2 for g in grid))
+        self.psi = amplitude * np.exp(-r_squared / (2 * width**2)) + 0j

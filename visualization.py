@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
-from uhfe_simulator import parameters as p
+import parameters as p
 
 def plot_field(psi, title="ψ Field", save_path=None):
     """
@@ -22,6 +22,7 @@ def plot_field(psi, title="ψ Field", save_path=None):
             plt.savefig(save_path)
         else:
             plt.show()
+            plt.savefig("2d-test-output.png")
 
     elif p.dimensions == 3:
         fig = plt.figure(figsize=(8, 6))
@@ -42,5 +43,6 @@ def plot_field(psi, title="ψ Field", save_path=None):
             plt.savefig(save_path)
         else:
             plt.show()
+            plt.savefig("3d-test-output.png")
     else:
         raise NotImplementedError("Only 2D and 3D visualization supported.")

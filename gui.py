@@ -4,8 +4,8 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import numpy as np
 
-from uhfe_simulator.simulation import UHFESimulation
-from uhfe_simulator import parameters as p
+from simulation import UHFESimulation
+import parameters as p
 
 class UHFESimulatorGUI:
     def __init__(self, master):

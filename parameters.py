@@ -1,14 +1,14 @@
 # UHFE field constants
-kappa = 1.0       # Nonlinear self-focusing term (|ψ|²ψ)
-lambda_ = 0.5     # Coherence-locking operator strength (C[ψ])
-beta = 0.3        # Topological memory persistence (T[ψ])
-gamma = 0.1       # Laplacian smoothing term (∇²ψ)
+kappa = 1.0 # 1.0       # Nonlinear self-focusing term (|ψ|²ψ)
+lambda_ = 0.5 # 0.5     # Coherence-locking operator strength (C[ψ])
+beta = 0.2 # 0.3        # Topological memory persistence (T[ψ])
+gamma = 0.3  # 0.1       # Laplacian smoothing term (∇²ψ)
 
 # Dirac-Harmonic operator placeholder (optional scaling)
-dirac_scale = 1.0
+dirac_scale = 0.5
 
 # Simulation control
-time_step = 0.01
+time_step = 0.0005
 grid_size = 100
 spatial_resolution = 1.0
 dimensions = 2  # Options: 1, 2, or 3
